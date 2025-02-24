@@ -1,0 +1,45 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class NotaFinal {
+        private Estudante estudante1,estudante2, estudante3, estudante4;
+
+        @BeforeEach
+        public void setup() {
+                System.out.printf("Criando novos alunos: :)...");
+                estudante1 = new Estudante("Maria Eduarda", 85.0);
+                estudante2 = new Estudante("Mirelle", 95.0);
+                estudante3 = new Estudante("Yasmin", 45.0);
+                estudante4 = new Estudante("Gabrieli", 20.0);
+        }
+        @Test
+        public void testDeAprovacao() {
+                System.out.printf("Calculando nivel de aprovacao do estudante...");
+                String notaFinal = avaliadorDeNotas.calcularNotaFinal(estudante1);
+                assertEquals("Aprovado com Excelencia!", notaFinal,
+                        "Parabens, seu desempenho foi incrivel!");
+        }
+        @Test
+        public void testDeAprovacao2() {
+                System.out.printf("Calculando nivel de aprovacao do estudante...");
+                String notaFinal = avaliadorDeNotas.calcularNotaFinal(estudante2);
+                assertEquals("Aprovado com excelencia!.", notaFinal,
+                        "Seu desempenho foi bom, continue assim!");
+        }
+        @Test
+        public void testDeRegularidade() {
+                System.out.printf("Calculando nivel de aprovacao do estudante...");
+                String notaFinal = avaliadorDeNotas.calcularNotaFinal(estudante3);
+                assertEquals("Insuficiente", notaFinal,
+                        "Você nao passou, precisa melhorar, nao desista!");
+        }
+        @Test
+        public void testDeAprovacaoIns() {
+                System.out.printf("Calculando nivel de aprovacao do estudante...");
+                String notaFinal = avaliadorDeNotas.calcularNotaFinal(estudante4);
+                assertEquals("Reprovado", notaFinal,
+                        "Voê foi reporvado, busque apoio e estude mais para a proxima!");
+        }
+}
